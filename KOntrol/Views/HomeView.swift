@@ -15,14 +15,15 @@ struct HomeView: View {
             VStack(spacing: 24) {
 
                 Spacer()
+                
 
                 Text("KOntrol")
                     .font(.largeTitle.bold())
-                    .foregroundColor(Color.white)
+                    .foregroundColor(AppColors.primaryText)
 
                 Text("Registra. Comprende. Decide.")
                     .font(.headline)
-                    .foregroundColor(Color.white)
+                    .foregroundColor(AppColors.secondaryText)
 
                 Text(messages.randomElement()!)
                     .font(.body)
@@ -36,12 +37,7 @@ struct HomeView: View {
                     EmotionListView()
                 } label: {
                     Text("Entrar")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color("ButtonGreen"))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
+                        .kontrolPrimaryButton()
                 }
                 .padding(.horizontal)
             }

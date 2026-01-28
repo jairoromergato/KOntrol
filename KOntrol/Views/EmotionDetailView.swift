@@ -1,37 +1,73 @@
 import SwiftUI
+import SwiftData
 
 struct EmotionDetailView: View {
 
     let emotion: Emotion
-    @State private var showRecordFlow = false
+    @State private var showAdd = false
 
     var body: some View {
-        VStack(spacing: 24) {
-
-            Text(emotion.name)
-                .font(.largeTitle.bold())
+        VStack(spacing: 28) {
 
             Spacer()
 
-            Button {
-                showRecordFlow = true
-            } label: {
-                Text("Añadir registro")
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(emotion.color.opacity(0.85))
-                    .foregroundColor(.white)
-                    .cornerRadius(14)
+            Text(emotion.name)
+                .font(.largeTitle.bold())
+                .foregroundColor(emotion.color)
+
+            VStack(spacing: 16) {
+
+                NavigationLink {
+                    HistoryView(emotion: emotion)
+                } label: {
+                    emotionButton(title: "Historial")
+                }
+
+                Button {
+                    // Aquí luego meteremos la gráfica
+                } label: {
+                    emotionButton(title: "Evolución")
+                }
+
+                Button {
+                    showAdd = true
+                } label: {
+                    emotionButton(
+                        title: "Añadir registro",
+                        emphasized: true
+                    )
+                }
             }
             .padding(.horizontal)
+
+            Spacer()
         }
-        .padding()
         .navigationTitle(emotion.name)
         .navigationBarTitleDisplayMode(.inline)
-        .background(AppColors.background)
-        .sheet(isPresented: $showRecordFlow) {
-            RecordBeforeView(emotion: emotion)
+        .sheet(isPresented: $showAdd) {
+            NavigationStack {
+                SelectSecondaryEmotionView(
+                    primaryEmotion: nil,
+                    fixedEmotion: emotion,
+                    onComplete: { showAdd = false }
+                )
+            }
         }
+    }
+
+    // MARK: - Botón reutilizable
+    private func emotionButton(
+        title: String,
+        emphasized: Bool = false
+    ) -> some View {
+        Text(title)
+            .font(emphasized ? .headline.bold() : .headline)
+            .foregroundColor(.white)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(
+                emotion.color.opacity(emphasized ? 1 : 0.85)
+            )
+            .cornerRadius(18)
     }
 }

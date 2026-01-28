@@ -4,34 +4,35 @@ import SwiftData
 struct EmotionListView: View {
 
     @Environment(\.modelContext) private var context
+    @Query(sort: \Emotion.createdAt) private var emotions: [Emotion]
 
-    @Query(sort: \Emotion.createdAt)
-    private var emotions: [Emotion]
+    @State private var showAddEmotion = false
 
     var body: some View {
-        VStack {
-
+        Group {
             if emotions.isEmpty {
                 emptyState
             } else {
-                emotionList
+                emotionButtons
             }
-
         }
         .navigationTitle("Emociones")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    addTestEmotion()
+                    showAddEmotion = true
                 } label: {
                     Image(systemName: "plus")
                 }
             }
         }
-        .scrollContentBackground(.hidden)
-        .background(AppColors.background)
+        .sheet(isPresented: $showAddEmotion) {
+            SelectPrimaryEmotionView {
+                showAddEmotion = false
+            }
+        }
+        .kontrolScreen()
     }
-   
 
     // MARK: - Empty state
     private var emptyState: some View {
@@ -40,51 +41,41 @@ struct EmotionListView: View {
 
             Text("Aún no hay emociones")
                 .font(.title3.bold())
+                .foregroundColor(AppColors.primaryText)
 
             Text("Añade la emoción que quieres trabajar")
-                .foregroundColor(.secondary)
+                .foregroundColor(AppColors.secondaryText)
 
             Button("Añadir emoción") {
-                addTestEmotion()
+                showAddEmotion = true
             }
-            .buttonStyle(.borderedProminent)
+            .kontrolPrimaryButton()
 
             Spacer()
         }
         .padding()
     }
 
-    // MARK: - Emotion list
-    private var emotionList: some View {
-        List {
-            ForEach(emotions) { emotion in
-                NavigationLink {
-                    EmotionDetailView(emotion: emotion)
-                } label: {
-                    HStack {
-                        Circle()
-                            .fill(emotion.color)
-                            .frame(width: 12, height: 12)
-
+    // MARK: - Emotion buttons
+    private var emotionButtons: some View {
+        ScrollView {
+            VStack(spacing: 14) {
+                ForEach(emotions) { emotion in
+                    NavigationLink {
+                        EmotionDetailView(emotion: emotion)
+                    } label: {
                         Text(emotion.name)
-                            .foregroundColor(AppColors.primaryText)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 18)
+                            .background(emotion.color)
+                            .cornerRadius(18)
                     }
-                    .padding(.vertical, 6)
+                    .buttonStyle(.plain) // 🔑 quita flechas y estilos de lista
                 }
             }
+            .padding()
         }
-        .scrollContentBackground(.hidden)
-        .background(AppColors.background)
-    }
-    
-    
-    // MARK: - Temporary
-    private func addTestEmotion() {
-        let emotion = Emotion(
-            name: "Impulsividad",
-            colorHex: "#FF6B6B",
-            iconName: "bolt.fill"
-        )
-        context.insert(emotion)
     }
 }
