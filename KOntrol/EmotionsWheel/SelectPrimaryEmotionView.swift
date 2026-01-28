@@ -5,7 +5,7 @@ struct SelectPrimaryEmotionView: View {
     @Environment(\.dismiss) private var dismiss
     let onComplete: () -> Void
 
-    let columns = [
+    private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
@@ -23,8 +23,9 @@ struct SelectPrimaryEmotionView: View {
                             )
                         } label: {
                             VStack(spacing: 12) {
-                                Circle()
-                                    .fill(emotion.themeColor)
+                                Image(emotion.iconName)
+                                    .resizable()
+                                    .scaledToFill()
                                     .frame(width: 60, height: 60)
 
                                 Text(emotion.rawValue)
@@ -46,9 +47,7 @@ struct SelectPrimaryEmotionView: View {
             .navigationTitle("¿Qué sientes ahora?")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancelar") {
-                        dismiss()
-                    }
+                    Button("Cancelar") { dismiss() }
                 }
             }
         }

@@ -5,7 +5,6 @@ struct EmotionListView: View {
 
     @Environment(\.modelContext) private var context
     @Query(sort: \Emotion.createdAt) private var emotions: [Emotion]
-
     @State private var showAddEmotion = false
 
     var body: some View {
@@ -13,7 +12,7 @@ struct EmotionListView: View {
             if emotions.isEmpty {
                 emptyState
             } else {
-                emotionButtons
+                emotionList
             }
         }
         .navigationTitle("Emociones")
@@ -31,7 +30,8 @@ struct EmotionListView: View {
                 showAddEmotion = false
             }
         }
-        .kontrolScreen()
+        .tint(AppColors.primaryButton)
+        .background(Color("BackgroundBlue").ignoresSafeArea())
     }
 
     // MARK: - Empty state
@@ -56,26 +56,41 @@ struct EmotionListView: View {
         .padding()
     }
 
-    // MARK: - Emotion buttons
-    private var emotionButtons: some View {
-        ScrollView {
-            VStack(spacing: 14) {
-                ForEach(emotions) { emotion in
-                    NavigationLink {
-                        EmotionDetailView(emotion: emotion)
+    // MARK: - Emotion list (swipe to delete)
+    private var emotionList: some View {
+        List {
+            ForEach(emotions) { emotion in
+                NavigationLink {
+                    EmotionDetailView(emotion: emotion)
+                } label: {
+                    Text(emotion.name)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 18)
+                        .background(emotion.color)
+                        .cornerRadius(18)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 7, leading: 16, bottom: 7, trailing: 16))
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    Button(role: .destructive) {
+                        deleteEmotion(emotion)
                     } label: {
-                        Text(emotion.name)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 18)
-                            .background(emotion.color)
-                            .cornerRadius(18)
+                        Label("Borrar", systemImage: "trash")
                     }
-                    .buttonStyle(.plain) // 🔑 quita flechas y estilos de lista
                 }
             }
-            .padding()
         }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+    }
+
+    private func deleteEmotion(_ emotion: Emotion) {
+        context.delete(emotion)
+        try? context.save()
     }
 }

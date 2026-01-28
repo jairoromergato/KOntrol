@@ -9,7 +9,7 @@ struct RecordImproveView: View {
     @State var draft: RecordDraft
 
     @Environment(\.modelContext) private var context
-    @Environment(\.dismiss) private var dismiss   // 👈 AÑADIDO
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         Form {
@@ -26,6 +26,9 @@ struct RecordImproveView: View {
             }
         }
         .navigationTitle("Comprender")
+        // ✅ fondo por emoción
+        .scrollContentBackground(.hidden)
+        .kontrolEmotionBackground(emotion.color)
     }
 
     private func saveRecord() {

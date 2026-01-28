@@ -53,6 +53,7 @@ struct EmotionDetailView: View {
                 )
             }
         }
+        .kontrolEmotionBackground(emotion.color)
     }
 
     // MARK: - Botón reutilizable

@@ -4,6 +4,10 @@ struct RecordDetailView: View {
 
     let record: ConsciousRecord
 
+    private var bg: Color {
+        (record.emotion?.color ?? Color("BackgroundBlue")).opacity(0.12)
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -46,5 +50,6 @@ struct RecordDetailView: View {
             .padding()
         }
         .navigationTitle("Registro")
+        .kontrolEmotionBackground(record.emotion?.color ?? .blue)
     }
 }

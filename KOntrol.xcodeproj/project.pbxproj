@@ -14,8 +14,7 @@
 		38FBE8FC2F2A0C120088DA12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FBE8FB2F2A0C120088DA12 /* Preview Assets.xcassets */; };
 		38FBE91D2F2A0CC30088DA12 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE90D2F2A0CC30088DA12 /* Color+Hex.swift */; };
 		38FBE91E2F2A0CC30088DA12 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE90E2F2A0CC30088DA12 /* AppColor.swift */; };
-		38FBE91F2F2A0CC30088DA12 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9102F2A0CC30088DA12 /* AppState.swift */; };
-		38FBE9202F2A0CC30088DA12 /* EmotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9112F2A0CC30088DA12 /* EmotionsViewModel.swift */; };
+		38FBE9202F2A0CC30088DA12 /* EmotionsWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9112F2A0CC30088DA12 /* EmotionsWheel.swift */; };
 		38FBE9212F2A0CC30088DA12 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9132F2A0CC30088DA12 /* PersistenceController.swift */; };
 		38FBE9252F2A0CE40088DA12 /* ConsciousRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9232F2A0CE40088DA12 /* ConsciousRecord.swift */; };
 		38FBE9262F2A0CE40088DA12 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9242F2A0CE40088DA12 /* Emotion.swift */; };
@@ -25,8 +24,6 @@
 		38FBE9382F2A0F120088DA12 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92A2F2A0F110088DA12 /* HomeView.swift */; };
 		38FBE9392F2A0F120088DA12 /* RecordDraft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92B2F2A0F120088DA12 /* RecordDraft.swift */; };
 		38FBE93A2F2A0F120088DA12 /* RecordImproveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92C2F2A0F120088DA12 /* RecordImproveView.swift */; };
-		38FBE93B2F2A0F120088DA12 /* RecordFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92D2F2A0F120088DA12 /* RecordFormView.swift */; };
-		38FBE93C2F2A0F120088DA12 /* AddEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92E2F2A0F120088DA12 /* AddEmotionView.swift */; };
 		38FBE93D2F2A0F120088DA12 /* RecordBeforeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE92F2F2A0F120088DA12 /* RecordBeforeView.swift */; };
 		38FBE93E2F2A0F120088DA12 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9302F2A0F120088DA12 /* RecordDetailView.swift */; };
 		38FBE93F2F2A0F120088DA12 /* RecordAfterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9312F2A0F120088DA12 /* RecordAfterView.swift */; };
@@ -34,8 +31,8 @@
 		38FBE9412F2A0F120088DA12 /* SelectPrimaryEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9332F2A0F120088DA12 /* SelectPrimaryEmotionView.swift */; };
 		38FBE9422F2A0F120088DA12 /* EmotionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9342F2A0F120088DA12 /* EmotionDetailView.swift */; };
 		38FBE9442F2A0F4E0088DA12 /* kontrolScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9432F2A0F4E0088DA12 /* kontrolScreen.swift */; };
-		38FBE9472F2A0F720088DA12 /* EmotionPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9452F2A0F710088DA12 /* EmotionPreset.swift */; };
-		38FBE9482F2A0F720088DA12 /* EmotionWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9462F2A0F710088DA12 /* EmotionWheel.swift */; };
+		38FBE9482F2A0F720088DA12 /* PrimaryEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE9462F2A0F710088DA12 /* PrimaryEmotion.swift */; };
+		38FBE94D2F2A40140088DA12 /* KOntrolEmotionBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FBE94C2F2A40140088DA12 /* KOntrolEmotionBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +44,7 @@
 		38FBE8FB2F2A0C120088DA12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38FBE90D2F2A0CC30088DA12 /* Color+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		38FBE90E2F2A0CC30088DA12 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
-		38FBE9102F2A0CC30088DA12 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		38FBE9112F2A0CC30088DA12 /* EmotionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewModel.swift; sourceTree = "<group>"; };
+		38FBE9112F2A0CC30088DA12 /* EmotionsWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsWheel.swift; sourceTree = "<group>"; };
 		38FBE9132F2A0CC30088DA12 /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		38FBE9232F2A0CE40088DA12 /* ConsciousRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsciousRecord.swift; sourceTree = "<group>"; };
 		38FBE9242F2A0CE40088DA12 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
@@ -58,8 +54,6 @@
 		38FBE92A2F2A0F110088DA12 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38FBE92B2F2A0F120088DA12 /* RecordDraft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDraft.swift; sourceTree = "<group>"; };
 		38FBE92C2F2A0F120088DA12 /* RecordImproveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordImproveView.swift; sourceTree = "<group>"; };
-		38FBE92D2F2A0F120088DA12 /* RecordFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordFormView.swift; sourceTree = "<group>"; };
-		38FBE92E2F2A0F120088DA12 /* AddEmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmotionView.swift; sourceTree = "<group>"; };
 		38FBE92F2F2A0F120088DA12 /* RecordBeforeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordBeforeView.swift; sourceTree = "<group>"; };
 		38FBE9302F2A0F120088DA12 /* RecordDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		38FBE9312F2A0F120088DA12 /* RecordAfterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAfterView.swift; sourceTree = "<group>"; };
@@ -67,8 +61,8 @@
 		38FBE9332F2A0F120088DA12 /* SelectPrimaryEmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPrimaryEmotionView.swift; sourceTree = "<group>"; };
 		38FBE9342F2A0F120088DA12 /* EmotionDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionDetailView.swift; sourceTree = "<group>"; };
 		38FBE9432F2A0F4E0088DA12 /* kontrolScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kontrolScreen.swift; sourceTree = "<group>"; };
-		38FBE9452F2A0F710088DA12 /* EmotionPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionPreset.swift; sourceTree = "<group>"; };
-		38FBE9462F2A0F710088DA12 /* EmotionWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionWheel.swift; sourceTree = "<group>"; };
+		38FBE9462F2A0F710088DA12 /* PrimaryEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryEmotion.swift; sourceTree = "<group>"; };
+		38FBE94C2F2A40140088DA12 /* KOntrolEmotionBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOntrolEmotionBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +95,12 @@
 		38FBE8F12F2A0C100088DA12 /* KOntrol */ = {
 			isa = PBXGroup;
 			children = (
+				38FBE8F22F2A0C100088DA12 /* KOntrolApp.swift */,
 				38FBE9222F2A0CE40088DA12 /* Models */,
 				38FBE9122F2A0CC30088DA12 /* Persistence */,
 				38FBE90C2F2A0CC30088DA12 /* Resources */,
-				38FBE90F2F2A0CC30088DA12 /* ViewModels */,
+				38FBE94B2F2A1CFB0088DA12 /* EmotionsWheel */,
 				38FBE9022F2A0CC30088DA12 /* Views */,
-				38FBE8F22F2A0C100088DA12 /* KOntrolApp.swift */,
 				38FBE8F42F2A0C100088DA12 /* ContentView.swift */,
 				38FBE8F62F2A0C100088DA12 /* Item.swift */,
 				38FBE8F82F2A0C120088DA12 /* Assets.xcassets */,
@@ -126,20 +120,15 @@
 		38FBE9022F2A0CC30088DA12 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				38FBE92E2F2A0F120088DA12 /* AddEmotionView.swift */,
 				38FBE9342F2A0F120088DA12 /* EmotionDetailView.swift */,
 				38FBE9322F2A0F120088DA12 /* EmotionListView.swift */,
 				38FBE9272F2A0F110088DA12 /* HistoryView.swift */,
 				38FBE92A2F2A0F110088DA12 /* HomeView.swift */,
-				38FBE9312F2A0F120088DA12 /* RecordAfterView.swift */,
 				38FBE92F2F2A0F120088DA12 /* RecordBeforeView.swift */,
+				38FBE9312F2A0F120088DA12 /* RecordAfterView.swift */,
+				38FBE92C2F2A0F120088DA12 /* RecordImproveView.swift */,
 				38FBE9302F2A0F120088DA12 /* RecordDetailView.swift */,
 				38FBE92B2F2A0F120088DA12 /* RecordDraft.swift */,
-				38FBE92D2F2A0F120088DA12 /* RecordFormView.swift */,
-				38FBE92C2F2A0F120088DA12 /* RecordImproveView.swift */,
-				38FBE9332F2A0F120088DA12 /* SelectPrimaryEmotionView.swift */,
-				38FBE9292F2A0F110088DA12 /* SelectSecondaryEmotionView.swift */,
-				38FBE9282F2A0F110088DA12 /* SelectTertiaryEmotionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,17 +139,9 @@
 				38FBE9432F2A0F4E0088DA12 /* kontrolScreen.swift */,
 				38FBE90D2F2A0CC30088DA12 /* Color+Hex.swift */,
 				38FBE90E2F2A0CC30088DA12 /* AppColor.swift */,
+				38FBE94C2F2A40140088DA12 /* KOntrolEmotionBackground.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		38FBE90F2F2A0CC30088DA12 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				38FBE9102F2A0CC30088DA12 /* AppState.swift */,
-				38FBE9112F2A0CC30088DA12 /* EmotionsViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		38FBE9122F2A0CC30088DA12 /* Persistence */ = {
@@ -174,12 +155,22 @@
 		38FBE9222F2A0CE40088DA12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				38FBE9452F2A0F710088DA12 /* EmotionPreset.swift */,
-				38FBE9462F2A0F710088DA12 /* EmotionWheel.swift */,
 				38FBE9232F2A0CE40088DA12 /* ConsciousRecord.swift */,
 				38FBE9242F2A0CE40088DA12 /* Emotion.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		38FBE94B2F2A1CFB0088DA12 /* EmotionsWheel */ = {
+			isa = PBXGroup;
+			children = (
+				38FBE9112F2A0CC30088DA12 /* EmotionsWheel.swift */,
+				38FBE9462F2A0F710088DA12 /* PrimaryEmotion.swift */,
+				38FBE9332F2A0F120088DA12 /* SelectPrimaryEmotionView.swift */,
+				38FBE9292F2A0F110088DA12 /* SelectSecondaryEmotionView.swift */,
+				38FBE9282F2A0F110088DA12 /* SelectTertiaryEmotionView.swift */,
+			);
+			path = EmotionsWheel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38FBE9482F2A0F720088DA12 /* EmotionWheel.swift in Sources */,
+				38FBE9482F2A0F720088DA12 /* PrimaryEmotion.swift in Sources */,
 				38FBE9262F2A0CE40088DA12 /* Emotion.swift in Sources */,
 				38FBE9382F2A0F120088DA12 /* HomeView.swift in Sources */,
 				38FBE91D2F2A0CC30088DA12 /* Color+Hex.swift in Sources */,
@@ -265,18 +256,15 @@
 				38FBE9442F2A0F4E0088DA12 /* kontrolScreen.swift in Sources */,
 				38FBE9362F2A0F120088DA12 /* SelectTertiaryEmotionView.swift in Sources */,
 				38FBE91E2F2A0CC30088DA12 /* AppColor.swift in Sources */,
-				38FBE93C2F2A0F120088DA12 /* AddEmotionView.swift in Sources */,
 				38FBE9352F2A0F120088DA12 /* HistoryView.swift in Sources */,
 				38FBE9372F2A0F120088DA12 /* SelectSecondaryEmotionView.swift in Sources */,
 				38FBE93F2F2A0F120088DA12 /* RecordAfterView.swift in Sources */,
-				38FBE93B2F2A0F120088DA12 /* RecordFormView.swift in Sources */,
 				38FBE8F72F2A0C100088DA12 /* Item.swift in Sources */,
-				38FBE91F2F2A0CC30088DA12 /* AppState.swift in Sources */,
 				38FBE9212F2A0CC30088DA12 /* PersistenceController.swift in Sources */,
-				38FBE9202F2A0CC30088DA12 /* EmotionsViewModel.swift in Sources */,
+				38FBE9202F2A0CC30088DA12 /* EmotionsWheel.swift in Sources */,
 				38FBE93A2F2A0F120088DA12 /* RecordImproveView.swift in Sources */,
-				38FBE9472F2A0F720088DA12 /* EmotionPreset.swift in Sources */,
 				38FBE8F32F2A0C100088DA12 /* KOntrolApp.swift in Sources */,
+				38FBE94D2F2A40140088DA12 /* KOntrolEmotionBackground.swift in Sources */,
 				38FBE9402F2A0F120088DA12 /* EmotionListView.swift in Sources */,
 				38FBE93D2F2A0F120088DA12 /* RecordBeforeView.swift in Sources */,
 			);

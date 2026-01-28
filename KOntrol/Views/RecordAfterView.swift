@@ -11,9 +11,9 @@ struct RecordAfterView: View {
         Form {
             Section("Después de la conducta") {
 
-                TextField("Conducta realizada", text: $draft.actionTaken)
-                TextField("Emoción posterior", text: $draft.emotionAfter)
-                TextField("Pensamientos posteriores", text: $draft.thoughtsAfter)
+                TextField("Que conducta/accion hicistes", text: $draft.actionTaken)
+                TextField("Que sentistes despues de hacerla", text: $draft.emotionAfter)
+                TextField("Que pensamientos tubistes despues", text: $draft.thoughtsAfter)
             }
         }
         .navigationTitle("Después")
@@ -28,5 +28,8 @@ struct RecordAfterView: View {
                 }
             }
         }
+        // ✅ fondo por emoción
+        .scrollContentBackground(.hidden)
+        .kontrolEmotionBackground(emotion.color)
     }
 }
